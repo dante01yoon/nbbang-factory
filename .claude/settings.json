@@ -10,7 +10,11 @@
   },
   "permissions": {
     "allow": [
-      "Bash(npm test)", "Bash(npm test:*)", "Bash(node:*)", "Bash(git:*)", "Bash(gh issue:*)", "Bash(gh label:*)", "Bash(gh pr:*)", "Bash(scripts/shot.sh:*)", "Bash(ls:*)", "Bash(cat:*)"
+      "Bash(npm test)", "Bash(npm test:*)", "Bash(npm run serve)", "Bash(node:*)",
+      "Bash(git:*)", "Bash(gh issue:*)", "Bash(gh label:*)", "Bash(gh pr:*)", "Bash(gh repo view:*)",
+      "Bash(scripts/shot.sh:*)", "Bash(./scripts/shot.sh:*)",
+      "Bash(ls:*)", "Bash(cat:*)", "Bash(cd:*)", "Bash(pwd)", "Bash(mkdir:*)",
+      "Read(/.claude/worktrees/**)", "Edit(/.claude/worktrees/**)", "Write(/.claude/worktrees/**)"
     ]
   }
 }
