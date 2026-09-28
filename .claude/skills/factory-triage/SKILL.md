@@ -6,6 +6,8 @@ description: 열린 GitHub 이슈를 CLAUDE.md의 정책에 따라 바로 수정
 # 이슈 분류
 
 1. `gh issue list --state open --json number,title,body,labels`로 아직 `factory:` 또는 `needs-info` 라벨이 없는 이슈를 가져온다.
+   `needs-info` 이슈는 `gh issue view <번호> --comments`로 `🤖 팩토리 자동 답변` 뒤에 새 답글이 달렸는지 보고, 달렸으면 답글의 값까지 넣어 다시 분류한다.
+   다시 분류할 때 열린 PR(`gh pr list`)과 원인이 같으면 새로 고치지 말고 그 PR을 이슈에 댓글로 연결한다.
 2. 이슈마다 CLAUDE.md의 표로 분류하고 근거를 한 줄로 적는다.
    - "바로 수정"은 이슈 본문의 입력값으로 `src/`의 함수를 직접 호출해 증상을 재현했을 때만 고른다. 재현하지 못하면 "정보 부족"이다.
 3. 인자가 `dry-run`이면 표만 출력하고 GitHub에는 아무것도 쓰지 않는다.
